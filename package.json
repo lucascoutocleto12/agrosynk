@@ -1,12 +1,11 @@
 {
   "name": "agrosynk-node-red",
   "version": "1.0.0",
-  "description": "Dashboard AgroSynk em Node-RED",
   "scripts": {
-    "start": "node-red --settings ./settings.js --userDir /data"
+    "start": "node-red --settings ./settings.js --userDir ."
   },
   "dependencies": {
     "node-red": "^4.0.0",
-    "node-red-dashboard": "^3.6.5"
+    "node-red-dashboard": "^3.6.6"
   }
 }
