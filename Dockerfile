@@ -1,13 +1,13 @@
-FROM nodered/node-red:latest
+FROM node:20-alpine
 
-COPY flows.json /data/flows.json
-COPY settings.js /data/settings.js
-COPY package.json /data/package.json
+WORKDIR /app
 
-WORKDIR /data
+COPY package.json ./
+RUN npm install --omit=dev
 
-RUN npm install --no-update-notifier --no-fund
+COPY flows.json ./
+COPY settings.js ./
 
 EXPOSE 1880
 
-CMD ["node-red", "--settings", "/data/settings.js", "--userDir", "/data"]
+CMD ["npx", "node-red", "--settings", "./settings.js", "--userDir", "."]
