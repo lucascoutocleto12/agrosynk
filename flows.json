@@ -1,0 +1,3208 @@
+[
+    {
+        "id": "f7cf459f5c71ce75",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "34cd15adb57b1c71",
+        "type": "ui_tab",
+        "name": "sensores",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "770eb3b43d2db6a5",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "aee79d5458963f72",
+        "type": "ui_tab",
+        "name": "Seleção de Culturas",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "816d8abe95619a90",
+        "type": "ui_group",
+        "name": "Informações",
+        "tab": "aee79d5458963f72",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "37d1544245389f2d",
+        "type": "ui_tab",
+        "name": "Informações",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e48291ccc6e60a7d",
+        "type": "ui_group",
+        "name": "Recomendações",
+        "tab": "37d1544245389f2d",
+        "order": 4,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5f140869639f852d",
+        "type": "ui_tab",
+        "name": "Histórico",
+        "icon": "timeline",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "fd28a6aecd5d5bf4",
+        "type": "ui_group",
+        "name": "Histórico",
+        "tab": "5f140869639f852d",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "093babceea6fea3d",
+        "type": "ui_group",
+        "name": "Cabeçalho",
+        "tab": "5f140869639f852d",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c4bd01236d9c16e8",
+        "type": "ui_group",
+        "name": "Indicadores",
+        "tab": "5f140869639f852d",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "64b521b59a58f266",
+        "type": "ui_group",
+        "name": "Alertas",
+        "tab": "5f140869639f852d",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "91eeb74f6cace384",
+        "type": "ui_group",
+        "name": "Situação da Lavoura",
+        "tab": "37d1544245389f2d",
+        "order": 3,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fc6337a12e831265",
+        "type": "ui_group",
+        "name": "Cultura",
+        "tab": "37d1544245389f2d",
+        "order": 1,
+        "disp": true,
+        "width": "2",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6159614cabe95eb2",
+        "type": "ui_group",
+        "name": "Saúde da Lavoura",
+        "tab": "37d1544245389f2d",
+        "order": 2,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "79759fe63a825a05",
+        "type": "ui_group",
+        "name": "Solo",
+        "tab": "37d1544245389f2d",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0d0a36af6833e920",
+        "type": "ui_group",
+        "name": "Nutrientes",
+        "tab": "37d1544245389f2d",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "113e9f00f066d673",
+        "type": "ui_tab",
+        "name": "Clima",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7983c597e2ea5537",
+        "type": "ui_group",
+        "name": "Estação Metereológica",
+        "tab": "113e9f00f066d673",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4d6ad0f385cc0846",
+        "type": "ui_group",
+        "name": "Cultura",
+        "tab": "aee79d5458963f72",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "98c0bd5c63458efa",
+        "type": "ui_group",
+        "name": "Resumo Climático",
+        "tab": "113e9f00f066d673",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0319b8a4109a34da",
+        "type": "ui_group",
+        "name": "Indicadores Climáticos",
+        "tab": "113e9f00f066d673",
+        "order": 5,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f9fe0aa46b295733",
+        "type": "ui_group",
+        "name": "Alertas Climáticos",
+        "tab": "113e9f00f066d673",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e4f41adf3cf7828e",
+        "type": "ui_group",
+        "name": "Relatórios",
+        "tab": "5f140869639f852d",
+        "order": 5,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1ca37c4d0f706795",
+        "type": "ui_dropdown",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "label": "Selecione a Cultura",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "4d6ad0f385cc0846",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Milho",
+                "value": "Milho",
+                "type": "str"
+            },
+            {
+                "label": "Soja",
+                "value": "Soja",
+                "type": "str"
+            },
+            {
+                "label": "Café",
+                "value": "Cafe",
+                "type": "str"
+            },
+            {
+                "label": "Cana de açúcar ",
+                "value": "Cana de Açúcar",
+                "type": "str"
+            },
+            {
+                "label": "Morango",
+                "value": "Morango",
+                "type": "str"
+            },
+            {
+                "label": "Mandioca",
+                "value": "Mandioca",
+                "type": "str"
+            },
+            {
+                "label": "Feijão",
+                "value": "Feijão",
+                "type": "str"
+            },
+            {
+                "label": "Tomate",
+                "value": "Tomate",
+                "type": "str"
+            },
+            {
+                "label": "Batata",
+                "value": "Batata",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "e807f1347d36d4db"
+            ]
+        ]
+    },
+    {
+        "id": "62e69c463f159e47",
+        "type": "ui_text",
+        "z": "f7cf459f5c71ce75",
+        "group": "4d6ad0f385cc0846",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Cultura Selecionada",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 680,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e807f1347d36d4db",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Salvar Cultura",
+        "func": "flow.set(\"cultura\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "62e69c463f159e47"
+            ]
+        ]
+    },
+    {
+        "id": "2cd83abccc77d783",
+        "type": "ui_button",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "4d6ad0f385cc0846",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Entrar",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "entrar",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "63f2fddd6d26d44a"
+            ]
+        ]
+    },
+    {
+        "id": "63f2fddd6d26d44a",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Cultura",
+        "func": "let cultura = flow.get(\"cultura\");\n\nmsg.payload = {\n    tab: \"Informações\"\n};\n\nmsg.cultura = cultura;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "1f708028a55e8b03"
+            ]
+        ]
+    },
+    {
+        "id": "1f708028a55e8b03",
+        "type": "ui_ui_control",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "events": "all",
+        "x": 560,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e61bb32454f1d73c",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "79759fe63a825a05",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Umidade do Solo",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "74f96c68414c0e8c",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "c4f3458691c4077b"
+            ]
+        ]
+    },
+    {
+        "id": "c4f3458691c4077b",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 2",
+        "func": "flow.set(\"umidade\", 40);\n\nmsg.payload = 40;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "e61bb32454f1d73c"
+            ]
+        ]
+    },
+    {
+        "id": "cb16f035443b7059",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "79759fe63a825a05",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c592c3ba02a924a6",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "b9d8af27ef393132"
+            ]
+        ]
+    },
+    {
+        "id": "b9d8af27ef393132",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 3",
+        "func": "flow.set(\"temperatura\", 27);\n\nmsg.payload = 27;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 460,
+        "wires": [
+            [
+                "cb16f035443b7059"
+            ]
+        ]
+    },
+    {
+        "id": "2138338e1cc9b8a3",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "79759fe63a825a05",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "PH",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "14",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 670,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "6aa9c3c4f48e0aa7",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 520,
+        "wires": [
+            [
+                "a808d7ad190bd098"
+            ]
+        ]
+    },
+    {
+        "id": "a808d7ad190bd098",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 4",
+        "func": "flow.set(\"ph\", 6.2);\n\nmsg.payload = 6.2;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 520,
+        "wires": [
+            [
+                "2138338e1cc9b8a3"
+            ]
+        ]
+    },
+    {
+        "id": "e365adbdd088e474",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "79759fe63a825a05",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "EC",
+        "label": "mS/cm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 670,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "245147028e864734",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "aeabcd3532d73235"
+            ]
+        ]
+    },
+    {
+        "id": "aeabcd3532d73235",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 5",
+        "func": "flow.set(\"ec\", 1.4);\n\nmsg.payload = 1.4;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 580,
+        "wires": [
+            [
+                "e365adbdd088e474"
+            ]
+        ]
+    },
+    {
+        "id": "d75216e5689b06d5",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 900,
+        "wires": [
+            [
+                "9e390641c5a23f63"
+            ]
+        ]
+    },
+    {
+        "id": "9e390641c5a23f63",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 6",
+        "func": "let cultura = flow.get(\"cultura\");\n\nif (cultura) {\n    cultura = cultura.toString().toLowerCase()\n        .normalize(\"NFD\")\n        .replace(/[\\u0300-\\u036f]/g, \"\");\n}\n\nlet umidade = flow.get(\"umidade\");\nlet temperaturaSolo = flow.get(\"temperatura\");\nlet ph = flow.get(\"ph\");\nlet ec = flow.get(\"ec\");\nlet n = flow.get(\"nitrogenio\");\nlet p = flow.get(\"fosforo\");\nlet k = flow.get(\"potassio\");\n\nlet chuva = flow.get(\"chuva\") || 0;\nlet temperaturaAr = flow.get(\"temperaturaAr\") || 0;\nlet umidadeAr = flow.get(\"umidadeAr\") || 0;\nlet vento = flow.get(\"vento\") || 0;\nlet radiacaoSolar = flow.get(\"radiacaoSolar\") || 0;\n\nlet culturas = {\n    milho: { nome: \"Milho\", umMin: 60, umMax: 80, tempMin: 20, tempMax: 30, phMin: 5.5, phMax: 7.0, ecMin: 1.0, ecMax: 2.5, nMin: 20, nMax: 40, pMin: 15, pMax: 30, kMin: 80, kMax: 150 },\n    soja: { nome: \"Soja\", umMin: 60, umMax: 70, tempMin: 20, tempMax: 30, phMin: 5.5, phMax: 6.8, ecMin: 1.0, ecMax: 2.0, nMin: null, nMax: null, pMin: 20, pMax: 40, kMin: 100, kMax: 200 },\n    cafe: { nome: \"Café\", umMin: 60, umMax: 80, tempMin: 18, tempMax: 24, phMin: 5.5, phMax: 6.5, ecMin: 1.0, ecMax: 2.5, nMin: 30, nMax: 60, pMin: 20, pMax: 40, kMin: 100, kMax: 200 },\n    cana: { nome: \"Cana-de-açúcar\", umMin: 60, umMax: 80, tempMin: 25, tempMax: 35, phMin: 5.5, phMax: 6.5, ecMin: 1.0, ecMax: 2.0, nMin: 60, nMax: 120, pMin: 30, pMax: 60, kMin: 100, kMax: 200 },\n    morango: { nome: \"Morango\", umMin: 65, umMax: 80, tempMin: 15, tempMax: 25, phMin: 5.5, phMax: 6.5, ecMin: 1.2, ecMax: 2.0, nMin: 50, nMax: 100, pMin: 30, pMax: 60, kMin: 100, kMax: 200 },\n    mandioca: { nome: \"Mandioca\", umMin: 50, umMax: 70, tempMin: 25, tempMax: 30, phMin: 5.0, phMax: 6.5, ecMin: 0.5, ecMax: 1.5, nMin: 10, nMax: 25, pMin: 10, pMax: 25, kMin: 80, kMax: 150 }\n};\n\nlet ref = culturas[cultura];\n\nif (!ref) {\n    msg.payload = {\n        cultura: \"Não selecionada\",\n        total: 0,\n        itens: [\"Selecione uma cultura para gerar recomendações.\"]\n    };\n    return msg;\n}\n\nlet itens = [];\n\nif (umidade < ref.umMin) {\n    if (chuva >= 10) {\n        itens.push(\"💧 Solo seco, mas houve chuva. Reavaliar antes de irrigar.\");\n    } else {\n        itens.push(\"💧 Umidade baixa. Irrigar 10 a 20 mm.\");\n    }\n} else if (umidade > ref.umMax) {\n    itens.push(\"💧 Umidade alta. Suspender irrigação.\");\n}\n\nif (temperaturaSolo < ref.tempMin) {\n    itens.push(\"🌡 Temperatura do solo baixa. Evitar excesso de irrigação.\");\n} else if (temperaturaSolo > ref.tempMax) {\n    itens.push(\"🌡 Temperatura do solo alta. Usar cobertura vegetal/mulch.\");\n}\n\nif (ph < ref.phMin) {\n    itens.push(\"🧪 pH baixo. Avaliar aplicação de calcário.\");\n} else if (ph > ref.phMax) {\n    itens.push(\"🧪 pH alto. Avaliar correção do solo.\");\n}\n\nif (ec < ref.ecMin) {\n    itens.push(\"⚡ EC baixa. Verificar adubação.\");\n} else if (ec > ref.ecMax) {\n    itens.push(\"⚡ EC alta. Possível excesso de sais.\");\n}\n\nif (ref.nMin !== null) {\n    if (n < ref.nMin) itens.push(\"🌿 Nitrogênio baixo. Avaliar ureia ou nitrato.\");\n    else if (n > ref.nMax) itens.push(\"🌿 Nitrogênio alto. Reduzir adubação nitrogenada.\");\n}\n\nif (p < ref.pMin) {\n    itens.push(\"🪨 Fósforo baixo. Avaliar superfosfato.\");\n} else if (p > ref.pMax) {\n    itens.push(\"🪨 Fósforo alto. Evitar adubação fosfatada.\");\n}\n\nif (k < ref.kMin) {\n    itens.push(\"🍌 Potássio baixo. Avaliar cloreto de potássio.\");\n} else if (k > ref.kMax) {\n    itens.push(\"🍌 Potássio alto. Reduzir adubação potássica.\");\n}\n\nif (vento > 25) {\n    itens.push(\"💨 Vento elevado. Evitar pulverização.\");\n}\n\nif (umidadeAr > 90) {\n    itens.push(\"💧 Umidade do ar alta. Monitorar doenças fúngicas.\");\n}\n\nif (umidadeAr < 40 && radiacaoSolar > 800) {\n    itens.push(\"☀️ Ar seco e radiação alta. Risco de estresse hídrico.\");\n}\n\nif (itens.length === 0) {\n    itens.push(\"✅ Nenhuma ação corretiva necessária no momento.\");\n}\n\nmsg.payload = {\n    cultura: ref.nome,\n    total: itens.length,\n    itens: itens\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 900,
+        "wires": [
+            [
+                "e4af50cf709c948a"
+            ]
+        ]
+    },
+    {
+        "id": "e4af50cf709c948a",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "e48291ccc6e60a7d",
+        "name": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:18px;\npadding:20px;\nbox-shadow:0 4px 16px rgba(0,0,0,0.15);\nborder-left:8px solid #F9A825;\nborder-top:8px solid #F9A825;\n\">\n\n    <h2 style=\"margin:0 0 12px 0;\">\n        📋 Recomendações\n    </h2>\n\n    <div style=\"\nfont-size:15px;\ncolor:#555;\nmargin-bottom:12px;\n\">\n        🌱 Cultura: <b>{{msg.payload.cultura}}</b>\n    </div>\n\n    <div style=\"\ndisplay:inline-block;\nbackground:#E8F5E9;\ncolor:#2E7D32;\npadding:8px 16px;\nborder-radius:20px;\nfont-weight:bold;\nmargin-bottom:15px;\n\">\n        🚨 {{msg.payload.total}} recomendação(ões)\n    </div>\n\n    <div style=\"\nbackground:#f7f7f7;\npadding:14px;\nborder-radius:12px;\nfont-size:14px;\nline-height:1.6;\n\">\n        <div ng-repeat=\"item in msg.payload.itens\">\n            • {{item}}\n        </div>\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7c3cd72ef8db830",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 980,
+        "wires": [
+            [
+                "3c1f179beab24fa0"
+            ]
+        ]
+    },
+    {
+        "id": "3c1f179beab24fa0",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 7",
+        "func": "let valor = Math.floor(Math.random() * 30) + 55;\n\nmsg.payload = valor;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 980,
+        "wires": [
+            [
+                "06318a7511c4cb20"
+            ]
+        ]
+    },
+    {
+        "id": "8ba919474de1e999",
+        "type": "ui_chart",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "fd28a6aecd5d5bf4",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "label": "Histórico de ph",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "4",
+        "ymax": "8",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 700,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e0f2533d8e01d61",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1040,
+        "wires": [
+            [
+                "d723dedb8924ea5b"
+            ]
+        ]
+    },
+    {
+        "id": "d723dedb8924ea5b",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 8",
+        "func": "let valor = (Math.random() * 2 + 5.5);\n\nmsg.payload = Number(valor.toFixed(1));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1040,
+        "wires": [
+            [
+                "8ba919474de1e999"
+            ]
+        ]
+    },
+    {
+        "id": "2c2ef384b03e6760",
+        "type": "ui_chart",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "fd28a6aecd5d5bf4",
+        "order": 2,
+        "width": "6",
+        "height": "5",
+        "label": "Histórico de EC",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0.5",
+        "ymax": "2.5",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 700,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aaf627712304ace6",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1100,
+        "wires": [
+            [
+                "36e045d153d8ad6a"
+            ]
+        ]
+    },
+    {
+        "id": "36e045d153d8ad6a",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 9",
+        "func": "let valor = (Math.random() * 2 + 0.5);\n\nmsg.payload = Number(valor.toFixed(1));\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1100,
+        "wires": [
+            [
+                "2c2ef384b03e6760"
+            ]
+        ]
+    },
+    {
+        "id": "499fe1f773c5677b",
+        "type": "ui_chart",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "fd28a6aecd5d5bf4",
+        "order": 3,
+        "width": "6",
+        "height": "5",
+        "label": "Histórico de Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "22°",
+        "ymax": "32°",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 730,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "263247cb980c0ce7",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1160,
+        "wires": [
+            [
+                "bf4ef3dc277fe7b2"
+            ]
+        ]
+    },
+    {
+        "id": "bf4ef3dc277fe7b2",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 10",
+        "func": "let valor = Math.floor(Math.random() * 10) + 22;\n\nmsg.payload = valor;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1160,
+        "wires": [
+            [
+                "499fe1f773c5677b"
+            ]
+        ]
+    },
+    {
+        "id": "a9f7a81d1ba7f43f",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "093babceea6fea3d",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"\npadding:20px;\nborder-radius:15px;\nbackground:linear-gradient(135deg,#2E7D32,#4CAF50);\ncolor:white;\ntext-align:center;\nbox-shadow:0px 4px 10px rgba(0,0,0,0.2);\n\">\n\n    <h1 style=\"margin:0;\">\n        📊 Histórico Agronômico\n    </h1>\n\n    <p style=\"margin-top:10px;font-size:16px;\">\n        Acompanhamento temporal dos sensores do solo\n    </p>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1080,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0103d767fcb22a8",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "64b521b59a58f266",
+        "name": "",
+        "order": 0,
+        "width": "12",
+        "height": "5",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:14px;\npadding:18px;\nbox-shadow:0 3px 12px rgba(0,0,0,0.12);\nborder-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;\n\">\n\n    <h2 style=\"margin-top:0;\">🚨 Histórico de Alertas</h2>\n\n    <ul style=\"font-size:15px;line-height:1.8;\">\n        <li ng-repeat=\"alerta in msg.payload\">\n            {{alerta}}\n        </li>\n    </ul>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1520,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "06318a7511c4cb20",
+        "type": "ui_chart",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "fd28a6aecd5d5bf4",
+        "order": 4,
+        "width": "6",
+        "height": "5",
+        "label": "Histórico de Umidade",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e9b5138887bec99",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "91eeb74f6cace384",
+        "name": "",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "format": "<div style=\"\nbackground:#ffffff;\nborder-radius:18px;\npadding:22px;\nbox-shadow:0 4px 16px rgba(0,0,0,0.15);\nborder-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;\nmin-height:220px;\n\">\n\n    <h2 style=\"margin:0 0 15px 0;font-size:22px;\">\n        🚨 Situação Atual da Lavoura\n    </h2>\n\n    <div style=\"\nfont-size:34px;\nfont-weight:bold;\ncolor:{{msg.payload.cor}};\nmargin-bottom:12px;\n\">\n        {{msg.payload.icone}} {{msg.payload.status}}\n    </div>\n\n    <div style=\"font-size:16px;margin-bottom:14px;\">\n        {{msg.payload.descricao}}\n    </div>\n\n    <pre style=\"\nwhite-space:pre-wrap;\nfont-size:15px;\nfont-family:Arial, sans-serif;\nline-height:1.6;\nbackground:#f7f7f7;\npadding:12px;\nborder-radius:10px;\n\">\n{{msg.payload.detalhes}}\n</pre>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1540,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6e10782cbc6bdab",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 11",
+        "func": "let cultura = flow.get(\"cultura\");\n\nif (cultura) {\n    cultura = cultura.toString().toLowerCase()\n        .normalize(\"NFD\")\n        .replace(/[\\u0300-\\u036f]/g, \"\");\n}\n\nlet umidade = flow.get(\"umidade\");\nlet ph = flow.get(\"ph\");\nlet ec = flow.get(\"ec\");\n\nlet culturas = {\n    milho: { nome: \"Milho\", umidadeMin: 60, umidadeMax: 80, phMin: 5.5, phMax: 7.0, ecMin: 1.0, ecMax: 2.5 },\n    soja: { nome: \"Soja\", umidadeMin: 60, umidadeMax: 75, phMin: 5.5, phMax: 6.8, ecMin: 1.0, ecMax: 2.0 },\n    cafe: { nome: \"Café\", umidadeMin: 60, umidadeMax: 80, phMin: 5.5, phMax: 6.5, ecMin: 1.0, ecMax: 2.5 },\n    cana: { nome: \"Cana-de-açúcar\", umidadeMin: 60, umidadeMax: 80, phMin: 5.5, phMax: 6.5, ecMin: 1.0, ecMax: 2.0 },\n    morango: { nome: \"Morango\", umidadeMin: 65, umidadeMax: 80, phMin: 5.5, phMax: 6.5, ecMin: 1.2, ecMax: 2.0 },\n    mandioca: { nome: \"Mandioca\", umidadeMin: 50, umidadeMax: 70, phMin: 5.0, phMax: 6.5, ecMin: 0.5, ecMax: 1.5 }\n};\n\nlet ref = culturas[cultura];\n\nif (!ref) {\n    msg.payload = {\n        cor: \"#9E9E9E\",\n        icone: \"⚪\",\n        status: \"Sem cultura selecionada\",\n        descricao: \"Selecione uma cultura para iniciar a análise.\",\n        detalhes: \"\"\n    };\n    return msg;\n}\n\nlet alertas = [];\n\nif (umidade < ref.umidadeMin) {\n    alertas.push(\"💧 Umidade abaixo do ideal para \" + ref.nome + \".\\n➡ Aumentar irrigação.\");\n} else if (umidade > ref.umidadeMax) {\n    alertas.push(\"💧 Umidade acima do ideal para \" + ref.nome + \".\\n➡ Reduzir irrigação e verificar drenagem.\");\n}\n\nif (ph < ref.phMin) {\n    alertas.push(\"🧪 pH abaixo do ideal para \" + ref.nome + \".\\n➡ Avaliar correção com calcário.\");\n} else if (ph > ref.phMax) {\n    alertas.push(\"🧪 pH acima do ideal para \" + ref.nome + \".\\n➡ Avaliar correção do solo.\");\n}\n\nif (ec < ref.ecMin) {\n    alertas.push(\"⚡ EC abaixo do ideal para \" + ref.nome + \".\\n➡ Verificar necessidade de adubação.\");\n} else if (ec > ref.ecMax) {\n    alertas.push(\"⚡ EC acima do ideal para \" + ref.nome + \".\\n➡ Possível excesso de sais/fertilizantes.\");\n}\n\nif (alertas.length === 0) {\n    msg.payload = {\n        cor: \"#2E7D32\",\n        icone: \"🟢\",\n        status: \"Saudável\",\n        descricao: \"Todos os parâmetros estão dentro da faixa ideal para \" + ref.nome + \".\",\n        detalhes: \"✅ Nenhuma ação corretiva necessária no momento.\"\n    };\n} else if (alertas.length === 1) {\n    msg.payload = {\n        cor: \"#F9A825\",\n        icone: \"🟡\",\n        status: \"Atenção\",\n        descricao: \"Foi detectado 1 parâmetro fora da faixa ideal.\",\n        detalhes: alertas.join(\"\\n\\n\")\n    };\n} else {\n    msg.payload = {\n        cor: \"#C62828\",\n        icone: \"🔴\",\n        status: \"Crítico\",\n        descricao: \"Foram detectados \" + alertas.length + \" parâmetros fora da faixa ideal.\",\n        detalhes: alertas.join(\"\\n\\n\")\n    };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 160,
+        "wires": [
+            [
+                "5e9b5138887bec99"
+            ]
+        ]
+    },
+    {
+        "id": "4bdc60b2b5652ca2",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 160,
+        "wires": [
+            [
+                "e6e10782cbc6bdab"
+            ]
+        ]
+    },
+    {
+        "id": "0f33db579cae3f73",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 240,
+        "wires": [
+            [
+                "244c44ecd28841cc"
+            ]
+        ]
+    },
+    {
+        "id": "244c44ecd28841cc",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 1",
+        "func": "let saude = flow.get(\"saudeLavoura\") || 65;\n\nlet status = \"\";\nlet cor = \"\";\nlet icone = \"\";\n\nif (saude >= 70) {\n    status = \"SAUDÁVEL\";\n    cor = \"#2E7D32\";\n    icone = \"🟢\";\n} else if (saude >= 40) {\n    status = \"ATENÇÃO\";\n    cor = \"#F9A825\";\n    icone = \"🟡\";\n} else {\n    status = \"CRÍTICO\";\n    cor = \"#C62828\";\n    icone = \"🔴\";\n}\n\nmsg.payload = {\n    saude: saude,\n    status: status,\n    cor: cor,\n    icone: icone\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 240,
+        "wires": [
+            [
+                "25650d0bd2a2f889"
+            ]
+        ]
+    },
+    {
+        "id": "5a59c1e491c9a5d0",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 640,
+        "wires": [
+            [
+                "7734a48b2423b216"
+            ]
+        ]
+    },
+    {
+        "id": "7734a48b2423b216",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 13",
+        "func": "let n = 25;\n\nflow.set(\"nitrogenio\", n);\n\nmsg.payload = n;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 640,
+        "wires": [
+            [
+                "991c628f4c0fbb93"
+            ]
+        ]
+    },
+    {
+        "id": "991c628f4c0fbb93",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "0d0a36af6833e920",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Nitrogênio (N)",
+        "label": "mg/kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 700,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "378cd7e3d2d7987b",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 700,
+        "wires": [
+            [
+                "562975f4d1555880"
+            ]
+        ]
+    },
+    {
+        "id": "562975f4d1555880",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 14",
+        "func": "let p = 18;\n\nflow.set(\"fosforo\", p);\n\nmsg.payload = p;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 700,
+        "wires": [
+            [
+                "88113770534c8771"
+            ]
+        ]
+    },
+    {
+        "id": "88113770534c8771",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "0d0a36af6833e920",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Fósforo (P)",
+        "label": "mg/kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "57579d586637ad52",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 760,
+        "wires": [
+            [
+                "3f24e07c2ed76291"
+            ]
+        ]
+    },
+    {
+        "id": "3f24e07c2ed76291",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 15",
+        "func": "let k = 90;\n\nflow.set(\"potassio\", k);\n\nmsg.payload = k;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 760,
+        "wires": [
+            [
+                "9a2d375c74a60306"
+            ]
+        ]
+    },
+    {
+        "id": "9a2d375c74a60306",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "0d0a36af6833e920",
+        "order": 3,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Potássio (K)",
+        "label": "mg/kg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "150",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "a3f673857857c181",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "7983c597e2ea5537",
+        "order": 0,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Chuva",
+        "label": "mm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1550,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d7a1917a1fdb6b94",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 340,
+        "wires": [
+            [
+                "2167dd6f766a3c59"
+            ]
+        ]
+    },
+    {
+        "id": "2167dd6f766a3c59",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 16",
+        "func": "let chuva = 12;\n\nflow.set(\"chuva\", chuva);\n\nmsg.payload = chuva;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 340,
+        "wires": [
+            [
+                "a3f673857857c181"
+            ]
+        ]
+    },
+    {
+        "id": "c20858248fdb1875",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "7983c597e2ea5537",
+        "order": 0,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Temperatura do Ar",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1590,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "447beb921f99b0b0",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 400,
+        "wires": [
+            [
+                "2d6f953fec013c9f"
+            ]
+        ]
+    },
+    {
+        "id": "2d6f953fec013c9f",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 17",
+        "func": "let temperaturaAr = 26;\n\nflow.set(\"temperaturaAr\", temperaturaAr);\n\nmsg.payload = temperaturaAr;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 400,
+        "wires": [
+            [
+                "c20858248fdb1875"
+            ]
+        ]
+    },
+    {
+        "id": "d5e31c45fbaae444",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "7983c597e2ea5537",
+        "order": 0,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Umidade do Ar",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1580,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "78a817c256d8c1cf",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 460,
+        "wires": [
+            [
+                "9bc454a5d40e0f07"
+            ]
+        ]
+    },
+    {
+        "id": "9bc454a5d40e0f07",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 18",
+        "func": "let umidadeAr = 72;\n\nflow.set(\"umidadeAr\", umidadeAr);\n\nmsg.payload = umidadeAr;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 460,
+        "wires": [
+            [
+                "d5e31c45fbaae444"
+            ]
+        ]
+    },
+    {
+        "id": "acec1b9ea3301998",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "7983c597e2ea5537",
+        "order": 0,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Velocidade do Vento",
+        "label": "km/h",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1600,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "246e4177154a52d7",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 520,
+        "wires": [
+            [
+                "1ccf798658402a62"
+            ]
+        ]
+    },
+    {
+        "id": "1ccf798658402a62",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 19",
+        "func": "let vento = 18;\n\nflow.set(\"vento\", vento);\n\nmsg.payload = vento;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 520,
+        "wires": [
+            [
+                "acec1b9ea3301998"
+            ]
+        ]
+    },
+    {
+        "id": "928b09496102c78e",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 580,
+        "wires": [
+            [
+                "ebd9b13df70251f5"
+            ]
+        ]
+    },
+    {
+        "id": "ebd9b13df70251f5",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 20",
+        "func": "msg.payload = {\n    seta: \"↗\",\n    direcao: \"Nordeste (NE)\"\n};\n\nflow.set(\"direcaoVento\", msg.payload.direcao);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 580,
+        "wires": [
+            [
+                "9b33d840e3ff3681"
+            ]
+        ]
+    },
+    {
+        "id": "9b33d840e3ff3681",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "7983c597e2ea5537",
+        "name": "",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:12px;\npadding:15px;\ntext-align:center;\nbox-shadow:0 2px 8px rgba(0,0,0,0.15);\nmin-height:120px;\n\">\n\n    <div style=\"font-size:26px;\">🧭</div>\n\n    <div style=\"font-size:14px;margin-top:4px;\">\n        Direção do Vento\n    </div>\n\n    <div style=\"\nfont-size:36px;\nfont-weight:bold;\ncolor:#1565C0;\nmargin-top:8px;\n\">\n        {{msg.payload.seta}}\n    </div>\n\n    <div style=\"\nfont-size:15px;\nfont-weight:bold;\nmargin-top:4px;\n\">\n        {{msg.payload.direcao}}\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1560,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52ba2d49b8654c43",
+        "type": "ui_gauge",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "7983c597e2ea5537",
+        "order": 0,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Radiação Solar",
+        "label": "W/m²",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1580,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ef92c042ac56336c",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1150,
+        "y": 640,
+        "wires": [
+            [
+                "5fe1629499404477"
+            ]
+        ]
+    },
+    {
+        "id": "5fe1629499404477",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 21",
+        "func": "let radiacaoSolar = 680;\n\nflow.set(\"radiacaoSolar\", radiacaoSolar);\n\nmsg.payload = radiacaoSolar;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 640,
+        "wires": [
+            [
+                "52ba2d49b8654c43"
+            ]
+        ]
+    },
+    {
+        "id": "25650d0bd2a2f889",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "6159614cabe95eb2",
+        "name": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:18px;\npadding:30px 20px;\ntext-align:center;\nbox-shadow:0 4px 16px rgba(0,0,0,0.15);\nborder-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;\n\">\n\n<div style=\"\nfont-size:18px;\nfont-weight:bold;\ncolor:#333;\n\">\n🌱 Saúde da Lavoura\n</div>\n\n<div style=\"\nfont-size:58px;\nfont-weight:bold;\ncolor:{{msg.payload.cor}};\nmargin-top:10px;\n\">\n{{msg.payload.saude}}%\n</div>\n\n<div style=\"\nwidth:100%;\nheight:12px;\nbackground:#E0E0E0;\nborder-radius:20px;\nmargin-top:15px;\noverflow:hidden;\n\">\n    <div style=\"\n    width:{{msg.payload.saude}}%;\n    height:100%;\n    background:{{msg.payload.cor}};\n    border-radius:20px;\n    \">\n    </div>\n</div>\n\n<div style=\"\ndisplay:inline-block;\nbackground:#FFF3CD;\ncolor:{{msg.payload.cor}};\npadding:8px 18px;\nborder-radius:25px;\nfont-size:18px;\nfont-weight:bold;\nmargin-top:18px;\n\">\n{{msg.payload.icone}} {{msg.payload.status}}\n</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1580,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b07506c6b7422449",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "98c0bd5c63458efa",
+        "name": "",
+        "order": 1,
+        "width": "6",
+        "height": "11",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:18px;\npadding:18px;\nbox-shadow:0 4px 16px rgba(0,0,0,0.15);\nborder-left:8px solid #2E7D32;\nborder-top:8px solid #2E7D32;\nmin-height:260px;\n\">\n\n<div style=\"font-size:22px;font-weight:bold;margin-bottom:8px;\">\n🌦️ Diagnóstico Climático\n</div>\n\n<div style=\"\nfont-size:30px;\nfont-weight:bold;\ncolor:{{msg.payload.cor}};\nmargin-bottom:10px;\n\">\n{{msg.payload.status}}\n</div>\n\n<div style=\"font-size:13px;color:#666;margin-bottom:12px;\">\nAvaliação automática com base nos dados da estação meteorológica.\n</div>\n\n<div style=\"\nbackground:#f5f5f5;\nborder-radius:12px;\npadding:12px;\nfont-size:14px;\nline-height:1.5;\nmargin-bottom:10px;\n\">\n<div ng-repeat=\"item in msg.payload.mensagem\">\n{{item}}\n</div>\n</div>\n\n<div style=\"\nbackground:#E8F5E9;\nborder-radius:12px;\npadding:12px;\nfont-size:14px;\nline-height:1.5;\ncolor:#2E7D32;\nfont-weight:bold;\n\">\n📈 Tendência: {{msg.payload.tendencia}}\n</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1620,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5dca8a83e40779c2",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 12",
+        "func": "let chuva = flow.get(\"chuva\") || 0;\nlet temp = flow.get(\"temperaturaAr\") || 0;\nlet umidade = flow.get(\"umidadeAr\") || 0;\nlet vento = flow.get(\"vento\") || 0;\nlet radiacao = flow.get(\"radiacaoSolar\") || 0;\n\nlet status = \"Clima Favorável\";\nlet cor = \"#2E7D32\";\nlet mensagem = [];\nlet tendencia = \"Condições estáveis nas próximas horas.\";\n\nif (temp > 35) {\n    mensagem.push(\"🌡 Temperatura elevada.\");\n    status = \"Atenção Climática\";\n    cor = \"#F9A825\";\n}\n\nif (umidade < 40) {\n    mensagem.push(\"💧 Umidade do ar baixa.\");\n    status = \"Atenção Climática\";\n    cor = \"#F9A825\";\n}\n\nif (vento > 30) {\n    mensagem.push(\"💨 Ventos fortes.\");\n    status = \"Atenção Climática\";\n    cor = \"#F9A825\";\n}\n\nif (chuva > 30) {\n    mensagem.push(\"🌧 Chuva intensa.\");\n    status = \"Atenção Climática\";\n    cor = \"#F9A825\";\n}\n\nif (radiacao > 1000) {\n    mensagem.push(\"☀ Radiação solar elevada.\");\n    status = \"Atenção Climática\";\n    cor = \"#F9A825\";\n}\n\nif (vento > 45 || temp > 38 || umidade < 25 || radiacao > 1100) {\n    status = \"Condição Crítica\";\n    cor = \"#C62828\";\n}\n\nif (mensagem.length === 0) {\n    mensagem.push(\"✅ Condições adequadas para o manejo agrícola.\");\n}\n\nif (chuva > 10) {\n    tendencia = \"Solo tende a permanecer úmido nas próximas horas.\";\n}\n\nif (vento > 25) {\n    tendencia = \"Evitar pulverização devido ao vento.\";\n}\n\nif (temp > 32) {\n    tendencia = \"Temperatura elevada pode aumentar a evaporação.\";\n}\n\nmsg.payload = {\n    status: status,\n    cor: cor,\n    mensagem: mensagem,\n    tendencia: tendencia\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1410,
+        "y": 740,
+        "wires": [
+            [
+                "b07506c6b7422449"
+            ]
+        ]
+    },
+    {
+        "id": "9d16dd0f4a212b8b",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1160,
+        "y": 740,
+        "wires": [
+            [
+                "5dca8a83e40779c2"
+            ]
+        ]
+    },
+    {
+        "id": "9b9d54e832fb2df8",
+        "type": "ui_chart",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "fd28a6aecd5d5bf4",
+        "order": 6,
+        "width": "6",
+        "height": "5",
+        "label": "Histórico de Nitrogênio",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c79c66ee89aa9850",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1220,
+        "wires": [
+            [
+                "ceb57db7f17cc8f8"
+            ]
+        ]
+    },
+    {
+        "id": "ceb57db7f17cc8f8",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 22",
+        "func": "let n = Math.floor(Math.random() * 40) + 10;\n\nflow.set(\"nitrogenio\", n);\n\nmsg.payload = n;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1220,
+        "wires": [
+            [
+                "9b9d54e832fb2df8"
+            ]
+        ]
+    },
+    {
+        "id": "465bec05d338dc93",
+        "type": "ui_chart",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "fd28a6aecd5d5bf4",
+        "order": 7,
+        "width": "6",
+        "height": "5",
+        "label": "Histórico de Fósforo",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "640e1d0e5d411ed9",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1280,
+        "wires": [
+            [
+                "589ecdbcc752171f"
+            ]
+        ]
+    },
+    {
+        "id": "589ecdbcc752171f",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 23",
+        "func": "let p = flow.get(\"fosforo\") || 18;\n\nmsg.payload = p;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1280,
+        "wires": [
+            [
+                "465bec05d338dc93"
+            ]
+        ]
+    },
+    {
+        "id": "cbde31b8fcf17a9a",
+        "type": "ui_chart",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "fd28a6aecd5d5bf4",
+        "order": 5,
+        "width": "6",
+        "height": "5",
+        "label": "Histórico de Potássio",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "150",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8cda298cc3664a21",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 1340,
+        "wires": [
+            [
+                "f2ce4a78113ec588"
+            ]
+        ]
+    },
+    {
+        "id": "f2ce4a78113ec588",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 24",
+        "func": "let k = flow.get(\"potassio\") || 90;\n\nmsg.payload = k;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1340,
+        "wires": [
+            [
+                "cbde31b8fcf17a9a"
+            ]
+        ]
+    },
+    {
+        "id": "41863c7705716588",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "c4bd01236d9c16e8",
+        "name": "",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:14px;\npadding:14px;\ntext-align:center;\nbox-shadow:0 3px 12px rgba(0,0,0,0.12);\nborder-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;\nheight:120px;\n\">\n\n    <div style=\"font-size:22px;\">🌱</div>\n\n    <div style=\"font-size:13px;color:#555;\">\n        Saúde da Lavoura\n    </div>\n\n    <div style=\"\nfont-size:26px;\nfont-weight:bold;\ncolor:{{msg.payload.cor}};\n\">\n        {{msg.payload.saude}}%\n    </div>\n\n    <div style=\"\nfont-size:12px;\nfont-weight:bold;\ncolor:{{msg.payload.cor}};\n\">\n        {{msg.payload.icone}} {{msg.payload.status}}\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1520,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f2528419daf0457",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 25",
+        "func": "let saude = flow.get(\"saudeLavoura\") || 65;\n\nlet status = \"Saudável\";\nlet cor = \"#2E7D32\";\nlet icone = \"🟢\";\n\nif (saude < 70) {\n    status = \"Atenção\";\n    cor = \"#F9A825\";\n    icone = \"🟡\";\n}\n\nif (saude < 40) {\n    status = \"Crítico\";\n    cor = \"#C62828\";\n    icone = \"🔴\";\n}\n\nmsg.payload = {\n    saude,\n    status,\n    cor,\n    icone\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1100,
+        "wires": [
+            [
+                "41863c7705716588"
+            ]
+        ]
+    },
+    {
+        "id": "168c5ee7b0f5e064",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 1100,
+        "wires": [
+            [
+                "1f2528419daf0457"
+            ]
+        ]
+    },
+    {
+        "id": "bc3a36d2128f7299",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "c4bd01236d9c16e8",
+        "name": "",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:14px;\npadding:14px;\ntext-align:center;\nbox-shadow:0 3px 12px rgba(0,0,0,0.12);\nborder-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;;\nheight:120px;\n\">\n\n    <div style=\"font-size:22px;\">🚨</div>\n\n    <div style=\"font-size:13px;color:#555;\">\n        Alertas Ativos\n    </div>\n\n    <div style=\"\nfont-size:32px;\nfont-weight:bold;\ncolor:{{msg.payload.cor}};\n\">\n        {{msg.payload.alertas}}\n    </div>\n\n    <div style=\"\nfont-size:12px;\nfont-weight:bold;\ncolor:{{msg.payload.cor}};\n\">\n        {{msg.payload.status}}\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1520,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "90be0fd824916266",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 26",
+        "func": "let alertas = 0;\n\nlet umidade = flow.get(\"umidade\") || 40;\nlet ph = flow.get(\"ph\") || 6.2;\nlet ec = flow.get(\"ec\") || 1.4;\nlet n = flow.get(\"nitrogenio\") || 25;\nlet p = flow.get(\"fosforo\") || 18;\nlet k = flow.get(\"potassio\") || 90;\n\nif (umidade < 50) alertas++;\nif (ph < 5.5 || ph > 7.5) alertas++;\nif (ec < 1 || ec > 3) alertas++;\nif (n < 30) alertas++;\nif (p < 20) alertas++;\nif (k < 100) alertas++;\n\nlet cor = \"#2E7D32\";\nlet status = \"Normal\";\n\nif (alertas > 0) {\n    cor = \"#F9A825\";\n    status = \"Atenção\";\n}\n\nif (alertas >= 4) {\n    cor = \"#C62828\";\n    status = \"Crítico\";\n}\n\nmsg.payload = {\n    alertas,\n    cor,\n    status\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1140,
+        "wires": [
+            [
+                "bc3a36d2128f7299"
+            ]
+        ]
+    },
+    {
+        "id": "e9dcde8ce57a6043",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 1140,
+        "wires": [
+            [
+                "90be0fd824916266"
+            ]
+        ]
+    },
+    {
+        "id": "5412dd2d58e61f59",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "c4bd01236d9c16e8",
+        "name": "",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:14px;\npadding:14px;\ntext-align:center;\nbox-shadow:0 3px 12px rgba(0,0,0,0.12);\nborder-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;;\nheight:120px;\n\">\n\n    <div style=\"font-size:22px;\">☔</div>\n\n    <div style=\"font-size:13px;color:#555;\">\n        Chuva Hoje\n    </div>\n\n    <div style=\"\nfont-size:30px;\nfont-weight:bold;\ncolor:#2196F3;\n\">\n        {{msg.payload.chuva}}\n    </div>\n\n    <div style=\"\nfont-size:12px;\nfont-weight:bold;\ncolor:#2196F3;\n\">\n        mm\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1520,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48aacdb46af91241",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 27",
+        "func": "let chuva = flow.get(\"chuva\") || 0;\n\nmsg.payload = {\n    chuva\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1180,
+        "wires": [
+            [
+                "5412dd2d58e61f59"
+            ]
+        ]
+    },
+    {
+        "id": "c693590a9f08dbea",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 1180,
+        "wires": [
+            [
+                "48aacdb46af91241"
+            ]
+        ]
+    },
+    {
+        "id": "6a66bb02a650631b",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "c4bd01236d9c16e8",
+        "name": "",
+        "order": 4,
+        "width": "3",
+        "height": "3",
+        "format": "<div style=\"\nbackground:white;\nborder-radius:14px;\npadding:14px;\ntext-align:center;\nbox-shadow:0 3px 12px rgba(0,0,0,0.12);\nborder-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;;\nheight:120px;\n\">\n\n    <div style=\"font-size:22px;\">🌾</div>\n\n    <div style=\"font-size:13px;color:#555;\">\n        Cultura Atual\n    </div>\n\n    <div style=\"\nfont-size:22px;\nfont-weight:bold;\ncolor:#2E7D32;\nmargin-top:10px;\n\">\n        {{msg.payload.cultura}}\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1520,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e570c90eb7fe010c",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 28",
+        "func": "let cultura = flow.get(\"cultura\") || \"Não selecionada\";\n\nmsg.payload = {\n    cultura: cultura.toString().toUpperCase()\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1220,
+        "wires": [
+            [
+                "6a66bb02a650631b"
+            ]
+        ]
+    },
+    {
+        "id": "7307d8286042e044",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 1220,
+        "wires": [
+            [
+                "e570c90eb7fe010c"
+            ]
+        ]
+    },
+    {
+        "id": "eee0d6b807ae0d85",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 1000,
+        "wires": [
+            [
+                "d8d3a38555e25f9f"
+            ]
+        ]
+    },
+    {
+        "id": "d8d3a38555e25f9f",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 29",
+        "func": "let alertas = [];\n\nlet agora = new Date().toLocaleTimeString(\"pt-BR\", {\n    hour: \"2-digit\",\n    minute: \"2-digit\"\n});\n\nlet cultura = flow.get(\"cultura\") || \"cultura\";\nlet umidade = flow.get(\"umidade\") || 0;\nlet ph = flow.get(\"ph\") || 0;\nlet ec = flow.get(\"ec\") || 0;\nlet n = flow.get(\"nitrogenio\") || 0;\nlet p = flow.get(\"fosforo\") || 0;\nlet k = flow.get(\"potassio\") || 0;\nlet chuva = flow.get(\"chuva\") || 0;\nlet vento = flow.get(\"vento\") || 0;\n\nif (umidade < 50) {\n    alertas.push(`${agora} - ⚠ Umidade abaixo do ideal para ${cultura}`);\n}\n\nif (ph < 5.5 || ph > 7.5) {\n    alertas.push(`${agora} - ⚠ pH fora da faixa ideal`);\n}\n\nif (ec > 3) {\n    alertas.push(`${agora} - ⚠ EC elevada detectada`);\n}\n\nif (n < 30) {\n    alertas.push(`${agora} - ⚠ Nitrogênio baixo`);\n}\n\nif (p < 20) {\n    alertas.push(`${agora} - ⚠ Fósforo baixo`);\n}\n\nif (k < 100) {\n    alertas.push(`${agora} - ⚠ Potássio baixo`);\n}\n\nif (chuva > 20) {\n    alertas.push(`${agora} - 🌧 Chuva intensa registrada`);\n}\n\nif (vento > 25) {\n    alertas.push(`${agora} - 💨 Vento elevado`);\n}\n\nif (alertas.length === 0) {\n    alertas.push(`${agora} - ✅ Nenhum alerta ativo`);\n}\n\nmsg.payload = alertas;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1000,
+        "wires": [
+            [
+                "f0103d767fcb22a8"
+            ]
+        ]
+    },
+    {
+        "id": "3fdbf4d3b28c4ff4",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "0319b8a4109a34da",
+        "name": "",
+        "order": 0,
+        "width": "12",
+        "height": "6",
+        "format": "<div style=\"display:flex;gap:15px;flex-wrap:wrap;\">\n\n    <div\n        style=\"flex:1;background:white;border-radius:14px;padding:16px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,0.12);border-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;;\">\n        <div style=\"font-size:26px;\">☔</div>\n        <div>Chuva Hoje</div>\n        <div style=\"font-size:30px;font-weight:bold;color:#2196F3;\">{{msg.payload.chuva}} mm</div>\n    </div>\n\n    <div\n        style=\"flex:1;background:white;border-radius:14px;padding:16px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,0.12);border-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;;\">\n        <div style=\"font-size:26px;\">🌡</div>\n        <div>Temperatura do Ar</div>\n        <div style=\"font-size:30px;font-weight:bold;color:#F57C00;\">{{msg.payload.temperaturaAr}}°C</div>\n    </div>\n\n    <div\n        style=\"flex:1;background:white;border-radius:14px;padding:16px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,0.12);border-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;;\">\n        <div style=\"font-size:26px;\">💧</div>\n        <div>Umidade do Ar</div>\n        <div style=\"font-size:30px;font-weight:bold;color:#00ACC1;\">{{msg.payload.umidadeAr}}%</div>\n    </div>\n\n    <div\n        style=\"flex:1;background:white;border-radius:14px;padding:16px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,0.12);border-top:8px solid #2E7D32;\nborder-left:8px solid #2E7D32;;\">\n        <div style=\"font-size:26px;\">💨</div>\n        <div>Vento</div>\n        <div style=\"font-size:30px;font-weight:bold;color:#607D8B;\">{{msg.payload.vento}} km/h</div>\n    </div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1520,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8ba3757587efde00",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 30",
+        "func": "let chuva = flow.get(\"chuva\") || 0;\nlet temperaturaAr = flow.get(\"temperaturaAr\") || 0;\nlet umidadeAr = flow.get(\"umidadeAr\") || 0;\nlet vento = flow.get(\"vento\") || 0;\n\nmsg.payload = {\n    chuva,\n    temperaturaAr,\n    umidadeAr,\n    vento\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1350,
+        "y": 1340,
+        "wires": [
+            [
+                "3fdbf4d3b28c4ff4"
+            ]
+        ]
+    },
+    {
+        "id": "8f39d3855ac1d95b",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 1340,
+        "wires": [
+            [
+                "8ba3757587efde00"
+            ]
+        ]
+    },
+    {
+        "id": "77f937bf626c46ef",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "f9fe0aa46b295733",
+        "name": "",
+        "order": 0,
+        "width": "12",
+        "height": "4",
+        "format": "<div>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\">\n        <path d=\"M0 0h24v24H0z\" fill=\"none\" />\n        <path fill=\"currentColor\" d=\"M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8A8 8 0 0 1 12 20Z\"\n            opacity=\".5\" />\n        <path fill=\"currentColor\" d=\"M20 12h2A10 10 0 0 0 12 2V4A8 8 0 0 1 20 12Z\">\n            <animateTransform attributeName=\"transform\" dur=\"1s\" from=\"0 12 12\" repeatCount=\"indefinite\" to=\"360 12 12\"\n                type=\"rotate\" />\n        </path>\n    </svg>\n    <div style=\"\nbackground:white;\nborder-radius:18px;\npadding:20px;\nbox-shadow:0 4px 15px rgba(0,0,0,0.15);\nborder-left:8px solid #2E7D32;\nborder-top:8px solid #2E7D32;\n\">\n\n    \n    <h2 style=\"margin-top:0;\">\n         Alertas Climáticos\n    </h2>\n\n    <div ng-repeat=\"alerta in msg.payload\" style=\"\nbackground:#f5f5f5;\npadding:12px;\nmargin-top:8px;\nborder-radius:10px;\nfont-size:15px;\n\">\n        {{alerta}}\n    </div>\n\n</div>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 660,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "398cfa78b98210ae",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 31",
+        "func": "let alertas = [];\n\nlet chuva = flow.get(\"chuva\") || 0;\nlet temperatura = flow.get(\"temperaturaAr\") || 0;\nlet umidade = flow.get(\"umidadeAr\") || 0;\nlet vento = flow.get(\"vento\") || 0;\nlet radiacao = flow.get(\"radiacao\") || 0;\n\nif (temperatura > 35) {\n    alertas.push(\"🌡 Temperatura elevada.\");\n}\n\nif (temperatura < 10) {\n    alertas.push(\"❄ Temperatura muito baixa.\");\n}\n\nif (umidade < 40) {\n    alertas.push(\"💧 Umidade do ar baixa.\");\n}\n\nif (vento > 30) {\n    alertas.push(\"💨 Ventos fortes.\");\n}\n\nif (chuva > 30) {\n    alertas.push(\"🌧 Chuva intensa.\");\n}\n\nif (radiacao > 1000) {\n    alertas.push(\"☀ Radiação solar elevada.\");\n}\n\nif (alertas.length === 0) {\n    alertas.push(\"✅ Nenhum alerta climático ativo.\");\n}\n\nmsg.payload = alertas;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 1440,
+        "wires": [
+            [
+                "77f937bf626c46ef"
+            ]
+        ]
+    },
+    {
+        "id": "425ccd6ed28d3bd1",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 1440,
+        "wires": [
+            [
+                "398cfa78b98210ae"
+            ]
+        ]
+    },
+    {
+        "id": "fb9cbaadbe26178e",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 1720,
+        "wires": [
+            [
+                "9f257af2e69653cc"
+            ]
+        ]
+    },
+    {
+        "id": "9f257af2e69653cc",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 34",
+        "func": "flow.set(\"logado\", false);\n\nmsg.payload = {\n    tab: \"Login\",\n    tabs: {\n        show: [\"Login\"],\n        hide: [\"Seleção de Culturas\", \"Informações\", \"Histórico\", \"Clima\"]\n    }\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1720,
+        "wires": [
+            [
+                "4944cfeeae288f4c"
+            ]
+        ]
+    },
+    {
+        "id": "4944cfeeae288f4c",
+        "type": "ui_ui_control",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "events": "all",
+        "x": 720,
+        "y": 1720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c95315a8d8eafda3",
+        "type": "ui_button",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "e4f41adf3cf7828e",
+        "order": 0,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "label": "📄 Gerar Relatório Diário",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 250,
+        "y": 1840,
+        "wires": [
+            [
+                "2284e864b7bd4661"
+            ]
+        ]
+    },
+    {
+        "id": "2284e864b7bd4661",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 33",
+        "func": "let agora = new Date().toLocaleString(\"pt-BR\");\n\nlet cultura = flow.get(\"cultura\") || \"Não selecionada\";\nlet saude = flow.get(\"saudeLavoura\") || 65;\n\nlet umidade = flow.get(\"umidade\") || 0;\nlet temperatura = flow.get(\"temperatura\") || 0;\nlet ph = flow.get(\"ph\") || 0;\nlet ec = flow.get(\"ec\") || 0;\n\nlet n = flow.get(\"nitrogenio\") || 0;\nlet p = flow.get(\"fosforo\") || 0;\nlet k = flow.get(\"potassio\") || 0;\n\nlet chuva = flow.get(\"chuva\") || 0;\nlet temperaturaAr = flow.get(\"temperaturaAr\") || 0;\nlet umidadeAr = flow.get(\"umidadeAr\") || 0;\nlet vento = flow.get(\"vento\") || 0;\nlet radiacao = flow.get(\"radiacao\") || 0;\n\nmsg.filename = \"C:/Users/Lucas/Downloads/relatorio_diario.html\";\n\nmsg.payload = `\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>Relatório Agronômico</title>\n</head>\n\n<body style=\"font-family:Arial;padding:30px\">\n\n<h1>📄 Relatório Agronômico Diário</h1>\n\n<p><b>Data:</b> ${agora}</p>\n<p><b>Cultura:</b> ${cultura}</p>\n<p><b>Saúde da Lavoura:</b> ${saude}%</p>\n\n<hr>\n\n<h2>🌱 Solo</h2>\n\n<ul>\n<li>Umidade: ${umidade}%</li>\n<li>Temperatura: ${temperatura}°C</li>\n<li>pH: ${ph}</li>\n<li>EC: ${ec}</li>\n</ul>\n\n<h2>🌿 Nutrientes</h2>\n\n<ul>\n<li>Nitrogênio: ${n} mg/kg</li>\n<li>Fósforo: ${p} mg/kg</li>\n<li>Potássio: ${k} mg/kg</li>\n</ul>\n\n<h2>🌦 Clima</h2>\n\n<ul>\n<li>Chuva: ${chuva} mm</li>\n<li>Temperatura do Ar: ${temperaturaAr}°C</li>\n<li>Umidade do Ar: ${umidadeAr}%</li>\n<li>Vento: ${vento} km/h</li>\n<li>Radiação Solar: ${radiacao} W/m²</li>\n</ul>\n\n</body>\n</html>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1840,
+        "wires": [
+            [
+                "9b6f1a6f45f0d56b"
+            ]
+        ]
+    },
+    {
+        "id": "9b6f1a6f45f0d56b",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 750,
+        "y": 1840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "990546f2e5de0a96",
+        "type": "ui_button",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "e4f41adf3cf7828e",
+        "order": 0,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "label": "📄 Gerar Relatório Semanal",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 1900,
+        "wires": [
+            [
+                "6b5ed262346452f4"
+            ]
+        ]
+    },
+    {
+        "id": "6b5ed262346452f4",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 35",
+        "func": "let agora = new Date().toLocaleString(\"pt-BR\");\n\nlet cultura = flow.get(\"cultura\") || \"Não selecionada\";\nlet saude = flow.get(\"saudeLavoura\") || 65;\n\nlet umidade = flow.get(\"umidade\") || 0;\nlet temperatura = flow.get(\"temperatura\") || 0;\nlet ph = flow.get(\"ph\") || 0;\nlet ec = flow.get(\"ec\") || 0;\n\nlet n = flow.get(\"nitrogenio\") || 0;\nlet p = flow.get(\"fosforo\") || 0;\nlet k = flow.get(\"potassio\") || 0;\n\nlet chuva = flow.get(\"chuva\") || 0;\nlet temperaturaAr = flow.get(\"temperaturaAr\") || 0;\nlet umidadeAr = flow.get(\"umidadeAr\") || 0;\nlet vento = flow.get(\"vento\") || 0;\nlet radiacao = flow.get(\"radiacao\") || 0;\n\nmsg.filename = \"C:/Users/Lucas/Downloads/relatorio_semanal.html\";\n\nmsg.payload = `\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>Relatório Agronômico</title>\n</head>\n\n<body style=\"font-family:Arial;padding:30px\">\n\n<h1>📄 Relatório Agronômico Semanal</h1>\n\n<p><b>Data:</b> ${agora}</p>\n<p><b>Cultura:</b> ${cultura}</p>\n<p><b>Saúde da Lavoura:</b> ${saude}%</p>\n\n<hr>\n\n<h2>🌱 Solo</h2>\n\n<ul>\n<li>Umidade: ${umidade}%</li>\n<li>Temperatura: ${temperatura}°C</li>\n<li>pH: ${ph}</li>\n<li>EC: ${ec}</li>\n</ul>\n\n<h2>🌿 Nutrientes</h2>\n\n<ul>\n<li>Nitrogênio: ${n} mg/kg</li>\n<li>Fósforo: ${p} mg/kg</li>\n<li>Potássio: ${k} mg/kg</li>\n</ul>\n\n<h2>🌦 Clima</h2>\n\n<ul>\n<li>Chuva: ${chuva} mm</li>\n<li>Temperatura do Ar: ${temperaturaAr}°C</li>\n<li>Umidade do Ar: ${umidadeAr}%</li>\n<li>Vento: ${vento} km/h</li>\n<li>Radiação Solar: ${radiacao} W/m²</li>\n</ul>\n\n</body>\n</html>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1900,
+        "wires": [
+            [
+                "c3caf4c733248e9f"
+            ]
+        ]
+    },
+    {
+        "id": "c3caf4c733248e9f",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 750,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d0b7d81c17f3d40d",
+        "type": "ui_button",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "group": "e4f41adf3cf7828e",
+        "order": 0,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "label": "📄 Gerar Relatório Mensal",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 1960,
+        "wires": [
+            [
+                "97a155b4313e5312"
+            ]
+        ]
+    },
+    {
+        "id": "97a155b4313e5312",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "function 36",
+        "func": "let agora = new Date().toLocaleString(\"pt-BR\");\n\nlet cultura = flow.get(\"cultura\") || \"Não selecionada\";\nlet saude = flow.get(\"saudeLavoura\") || 65;\n\nlet umidade = flow.get(\"umidade\") || 0;\nlet temperatura = flow.get(\"temperatura\") || 0;\nlet ph = flow.get(\"ph\") || 0;\nlet ec = flow.get(\"ec\") || 0;\n\nlet n = flow.get(\"nitrogenio\") || 0;\nlet p = flow.get(\"fosforo\") || 0;\nlet k = flow.get(\"potassio\") || 0;\n\nlet chuva = flow.get(\"chuva\") || 0;\nlet temperaturaAr = flow.get(\"temperaturaAr\") || 0;\nlet umidadeAr = flow.get(\"umidadeAr\") || 0;\nlet vento = flow.get(\"vento\") || 0;\nlet radiacao = flow.get(\"radiacao\") || 0;\n\nmsg.filename = \"C:/Users/Lucas/Downloads/relatorio_mensal.html\";\n\nmsg.payload = `\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>Relatório Agronômico</title>\n</head>\n\n<body style=\"font-family:Arial;padding:30px\">\n\n<h1>📄 Relatório Agronômico Mensal</h1>\n\n<p><b>Data:</b> ${agora}</p>\n<p><b>Cultura:</b> ${cultura}</p>\n<p><b>Saúde da Lavoura:</b> ${saude}%</p>\n\n<hr>\n\n<h2>🌱 Solo</h2>\n\n<ul>\n<li>Umidade: ${umidade}%</li>\n<li>Temperatura: ${temperatura}°C</li>\n<li>pH: ${ph}</li>\n<li>EC: ${ec}</li>\n</ul>\n\n<h2>🌿 Nutrientes</h2>\n\n<ul>\n<li>Nitrogênio: ${n} mg/kg</li>\n<li>Fósforo: ${p} mg/kg</li>\n<li>Potássio: ${k} mg/kg</li>\n</ul>\n\n<h2>🌦 Clima</h2>\n\n<ul>\n<li>Chuva: ${chuva} mm</li>\n<li>Temperatura do Ar: ${temperaturaAr}°C</li>\n<li>Umidade do Ar: ${umidadeAr}%</li>\n<li>Vento: ${vento} km/h</li>\n<li>Radiação Solar: ${radiacao} W/m²</li>\n</ul>\n\n</body>\n</html>\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 1960,
+        "wires": [
+            [
+                "71961b7acf60a426"
+            ]
+        ]
+    },
+    {
+        "id": "71961b7acf60a426",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 750,
+        "y": 1960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a35660e6a4cd530f",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
