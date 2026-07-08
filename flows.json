@@ -3026,7 +3026,7 @@
         "y": 1840,
         "wires": [
             [
-                "2284e864b7bd4661"
+                "0bb9e4118d3a402e"
             ]
         ]
     },
@@ -3091,7 +3091,7 @@
         "y": 1900,
         "wires": [
             [
-                "6b5ed262346452f4"
+                "ebb1433342c04e9f"
             ]
         ]
     },
@@ -3156,7 +3156,7 @@
         "y": 1960,
         "wires": [
             [
-                "97a155b4313e5312"
+                "e99b5f97869e4eb4"
             ]
         ]
     },
@@ -3204,5 +3204,787 @@
         "modules": {
             "node-red-dashboard": "3.6.6"
         }
+    },
+    {
+        "id": "ee0981322c3d4cc2",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "Criar histórico vazio no start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 2200,
+        "wires": [
+            [
+                "61da56759df04e65"
+            ]
+        ]
+    },
+    {
+        "id": "61da56759df04e65",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Criar histórico vazio",
+        "func": "msg.filename = \"/tmp/historico_sensores.json\";\nmsg.payload = \"[]\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 2200,
+        "wires": [
+            [
+                "a42ebae019524078"
+            ]
+        ]
+    },
+    {
+        "id": "a42ebae019524078",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "Salvar histórico vazio",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 780,
+        "y": 2200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "819ebd58e9524fca",
+        "type": "inject",
+        "z": "f7cf459f5c71ce75",
+        "name": "Salvar leitura histórica 1h",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 2260,
+        "wires": [
+            [
+                "d6f298398d2d4077"
+            ]
+        ]
+    },
+    {
+        "id": "d6f298398d2d4077",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Montar leitura histórica",
+        "func": "msg.novaLeitura = {\n    data: new Date().toISOString(),\n\n    cultura: flow.get(\"cultura\") || \"Não selecionada\",\n    saude: flow.get(\"saudeLavoura\") || 65,\n\n    umidade: flow.get(\"umidade\") || 0,\n    temperatura: flow.get(\"temperatura\") || 0,\n    ph: flow.get(\"ph\") || 0,\n    ec: flow.get(\"ec\") || 0,\n\n    nitrogenio: flow.get(\"nitrogenio\") || 0,\n    fosforo: flow.get(\"fosforo\") || 0,\n    potassio: flow.get(\"potassio\") || 0,\n\n    chuva: flow.get(\"chuva\") || 0,\n    temperaturaAr: flow.get(\"temperaturaAr\") || 0,\n    umidadeAr: flow.get(\"umidadeAr\") || 0,\n    vento: flow.get(\"vento\") || 0,\n    radiacaoSolar: flow.get(\"radiacaoSolar\") || 0\n};\n\nmsg.filename = \"/tmp/historico_sensores.json\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 2260,
+        "wires": [
+            [
+                "5f973c2106b44129"
+            ]
+        ]
+    },
+    {
+        "id": "5f973c2106b44129",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler histórico sensores",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 780,
+        "y": 2260,
+        "wires": [
+            [
+                "20abe8ad3fc04f9c"
+            ]
+        ]
+    },
+    {
+        "id": "20abe8ad3fc04f9c",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Adicionar e limpar 30 dias",
+        "func": "let historico = [];\n\ntry {\n    if (msg.payload && msg.payload.trim() !== \"\") {\n        historico = JSON.parse(msg.payload);\n    }\n} catch (e) {\n    historico = [];\n}\n\nhistorico.push(msg.novaLeitura);\n\nlet limite = Date.now() - (30 * 24 * 60 * 60 * 1000);\n\nhistorico = historico.filter(item => {\n    return new Date(item.data).getTime() >= limite;\n});\n\nmsg.payload = JSON.stringify(historico, null, 2);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 2260,
+        "wires": [
+            [
+                "5abe06e441c24491"
+            ]
+        ]
+    },
+    {
+        "id": "5abe06e441c24491",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "Salvar histórico sensores",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1320,
+        "y": 2260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa9574ea9c4b4350",
+        "type": "http in",
+        "z": "f7cf459f5c71ce75",
+        "name": "GET /ver-historico",
+        "url": "/ver-historico",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 2320,
+        "wires": [
+            [
+                "ad02990adbd945eb"
+            ]
+        ]
+    },
+    {
+        "id": "ad02990adbd945eb",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Definir caminho histórico",
+        "func": "msg.filename = \"/tmp/historico_sensores.json\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 2320,
+        "wires": [
+            [
+                "72c64cadc4984714"
+            ]
+        ]
+    },
+    {
+        "id": "72c64cadc4984714",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler histórico JSON",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 760,
+        "y": 2320,
+        "wires": [
+            [
+                "987b45a57cda4f56"
+            ]
+        ]
+    },
+    {
+        "id": "987b45a57cda4f56",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Header JSON",
+        "func": "msg.headers = {\"Content-Type\":\"application/json; charset=utf-8\"};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 2320,
+        "wires": [
+            [
+                "551446bbe9f8422c"
+            ]
+        ]
+    },
+    {
+        "id": "551446bbe9f8422c",
+        "type": "http response",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1180,
+        "y": 2320,
+        "wires": []
+    },
+    {
+        "id": "0bb9e4118d3a402e",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Definir histórico diario",
+        "func": "msg.filename = \"/tmp/historico_sensores.json\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1840,
+        "wires": [
+            [
+                "4719429d640d40ca"
+            ]
+        ]
+    },
+    {
+        "id": "4719429d640d40ca",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler histórico diario",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 760,
+        "y": 1840,
+        "wires": [
+            [
+                "3a67c08329c540e7"
+            ]
+        ]
+    },
+    {
+        "id": "3a67c08329c540e7",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Gerar relatório diario real",
+        "func": "let historico = [];\n\ntry {\n    historico = JSON.parse(msg.payload || \"[]\");\n} catch (e) {\n    historico = [];\n}\n\nlet agora = Date.now();\nlet limite = agora - (1 * 24 * 60 * 60 * 1000);\n\nlet dados = historico.filter(item => {\n    return new Date(item.data).getTime() >= limite;\n});\n\nfunction media(campo) {\n    if (dados.length === 0) return 0;\n    let soma = dados.reduce((acc, item) => acc + Number(item[campo] || 0), 0);\n    return (soma / dados.length).toFixed(1);\n}\n\nfunction max(campo) {\n    if (dados.length === 0) return 0;\n    return Math.max(...dados.map(item => Number(item[campo] || 0)));\n}\n\nfunction min(campo) {\n    if (dados.length === 0) return 0;\n    return Math.min(...dados.map(item => Number(item[campo] || 0)));\n}\n\nlet ultima = dados[dados.length - 1] || {};\nlet dataGeracao = new Date().toLocaleString(\"pt-BR\");\n\nlet html = `\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>Relatório Agronômico Diário - AgroSynk</title>\n\n<style>\nbody {\n    font-family: Arial, sans-serif;\n    padding: 30px;\n    color: #222;\n    background: #f7f7f7;\n}\n\n.container {\n    background: white;\n    padding: 30px;\n    border-radius: 16px;\n    max-width: 900px;\n    margin: auto;\n    box-shadow: 0 4px 14px rgba(0,0,0,0.12);\n}\n\nh1 {\n    color: #2E7D32;\n    margin-bottom: 5px;\n}\n\n.subtitulo {\n    color: #666;\n    margin-bottom: 25px;\n}\n\n.card {\n    border-left: 7px solid #2E7D32;\n    background: #f4f4f4;\n    padding: 18px;\n    border-radius: 12px;\n    margin: 18px 0;\n}\n\n.grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 12px;\n}\n\n.indicador {\n    background: white;\n    border-radius: 10px;\n    padding: 14px;\n    text-align: center;\n    border: 1px solid #ddd;\n}\n\n.valor {\n    font-size: 24px;\n    font-weight: bold;\n    color: #2E7D32;\n}\n\ntable {\n    width: 100%;\n    border-collapse: collapse;\n    margin-top: 15px;\n}\n\ntd, th {\n    border: 1px solid #ddd;\n    padding: 10px;\n    text-align: left;\n}\n\nth {\n    background: #2E7D32;\n    color: white;\n}\n\n.alerta {\n    background: #FFF8E1;\n    border-left: 6px solid #F9A825;\n    padding: 12px;\n    border-radius: 10px;\n}\n</style>\n</head>\n\n<body>\n\n<div class=\"container\">\n\n<h1>📄 Relatório Agronômico Diário</h1>\n<p class=\"subtitulo\">Gerado em: ${dataGeracao}</p>\n\n<div class=\"card\">\n<h2>🌱 Resumo Geral</h2>\n<p><b>Cultura:</b> ${ultima.cultura || \"Não selecionada\"}</p>\n<p><b>Período:</b> últimas 24 horas</p>\n<p><b>Quantidade de leituras:</b> ${dados.length}</p>\n<p><b>Saúde média da lavoura:</b> ${media(\"saude\")}%</p>\n</div>\n\n<div class=\"card\">\n<h2>📊 Indicadores Médios</h2>\n\n<div class=\"grid\">\n<div class=\"indicador\"><div>Umidade do Solo</div><div class=\"valor\">${media(\"umidade\")}%</div></div>\n<div class=\"indicador\"><div>Temperatura do Solo</div><div class=\"valor\">${media(\"temperatura\")}°C</div></div>\n<div class=\"indicador\"><div>pH Médio</div><div class=\"valor\">${media(\"ph\")}</div></div>\n<div class=\"indicador\"><div>EC Média</div><div class=\"valor\">${media(\"ec\")}</div></div>\n<div class=\"indicador\"><div>Nitrogênio</div><div class=\"valor\">${media(\"nitrogenio\")}</div></div>\n<div class=\"indicador\"><div>Fósforo</div><div class=\"valor\">${media(\"fosforo\")}</div></div>\n<div class=\"indicador\"><div>Potássio</div><div class=\"valor\">${media(\"potassio\")}</div></div>\n<div class=\"indicador\"><div>Chuva</div><div class=\"valor\">${media(\"chuva\")} mm</div></div>\n<div class=\"indicador\"><div>Vento</div><div class=\"valor\">${media(\"vento\")} km/h</div></div>\n</div>\n</div>\n\n<div class=\"card\">\n<h2>🌦 Clima</h2>\n<table>\n<tr><th>Indicador</th><th>Média</th><th>Mínimo</th><th>Máximo</th></tr>\n<tr><td>Temperatura do Ar</td><td>${media(\"temperaturaAr\")}°C</td><td>${min(\"temperaturaAr\")}°C</td><td>${max(\"temperaturaAr\")}°C</td></tr>\n<tr><td>Umidade do Ar</td><td>${media(\"umidadeAr\")}%</td><td>${min(\"umidadeAr\")}%</td><td>${max(\"umidadeAr\")}%</td></tr>\n<tr><td>Radiação Solar</td><td>${media(\"radiacaoSolar\")} W/m²</td><td>${min(\"radiacaoSolar\")} W/m²</td><td>${max(\"radiacaoSolar\")} W/m²</td></tr>\n</table>\n</div>\n\n<div class=\"card\">\n<h2>🚨 Diagnóstico</h2>\n${\n    dados.length === 0\n    ? `<div class=\"alerta\">Nenhuma leitura encontrada em últimas 24 horas.</div>`\n    : `<p>O relatório foi gerado com base nos dados históricos registrados automaticamente pelo AgroSynk.</p>`\n}\n</div>\n\n</div>\n</body>\n</html>\n`;\n\nmsg.filename = \"/tmp/relatorio_diario.html\";\nmsg.payload = html;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1840,
+        "wires": [
+            [
+                "da8b7db421794633"
+            ]
+        ]
+    },
+    {
+        "id": "da8b7db421794633",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "Salvar relatório diario",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1280,
+        "y": 1840,
+        "wires": [
+            [
+                "7f10df71c1fe47a9"
+            ]
+        ]
+    },
+    {
+        "id": "7f10df71c1fe47a9",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Abrir download diario",
+        "func": "msg.payload = {\n    acao: \"baixar\",\n    url: \"/baixar/diario\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1840,
+        "wires": [
+            [
+                "66b5b01a33f74d55"
+            ]
+        ]
+    },
+    {
+        "id": "ccf6cb4528a546e3",
+        "type": "http in",
+        "z": "f7cf459f5c71ce75",
+        "name": "GET /baixar/diario",
+        "url": "/baixar/diario",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 2140,
+        "wires": [
+            [
+                "7e7333d78e584738"
+            ]
+        ]
+    },
+    {
+        "id": "7e7333d78e584738",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler arquivo diario",
+        "filename": "\"/tmp/relatorio_diario.html\"",
+        "filenameType": "jsonata",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 510,
+        "y": 2140,
+        "wires": [
+            [
+                "71f825d624d144bd"
+            ]
+        ]
+    },
+    {
+        "id": "71f825d624d144bd",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Headers diario",
+        "func": "msg.headers = {\n    \"Content-Type\": \"text/html; charset=utf-8\",\n    \"Content-Disposition\": \"attachment; filename=relatorio_diario.html\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2140,
+        "wires": [
+            [
+                "324d82e0b8b4408b"
+            ]
+        ]
+    },
+    {
+        "id": "324d82e0b8b4408b",
+        "type": "http response",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 980,
+        "y": 2140,
+        "wires": []
+    },
+    {
+        "id": "ebb1433342c04e9f",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Definir histórico semanal",
+        "func": "msg.filename = \"/tmp/historico_sensores.json\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1900,
+        "wires": [
+            [
+                "14bb91d94b244f8e"
+            ]
+        ]
+    },
+    {
+        "id": "14bb91d94b244f8e",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler histórico semanal",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 760,
+        "y": 1900,
+        "wires": [
+            [
+                "c6b574dbb4094378"
+            ]
+        ]
+    },
+    {
+        "id": "c6b574dbb4094378",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Gerar relatório semanal real",
+        "func": "let historico = [];\n\ntry {\n    historico = JSON.parse(msg.payload || \"[]\");\n} catch (e) {\n    historico = [];\n}\n\nlet agora = Date.now();\nlet limite = agora - (7 * 24 * 60 * 60 * 1000);\n\nlet dados = historico.filter(item => {\n    return new Date(item.data).getTime() >= limite;\n});\n\nfunction media(campo) {\n    if (dados.length === 0) return 0;\n    let soma = dados.reduce((acc, item) => acc + Number(item[campo] || 0), 0);\n    return (soma / dados.length).toFixed(1);\n}\n\nfunction max(campo) {\n    if (dados.length === 0) return 0;\n    return Math.max(...dados.map(item => Number(item[campo] || 0)));\n}\n\nfunction min(campo) {\n    if (dados.length === 0) return 0;\n    return Math.min(...dados.map(item => Number(item[campo] || 0)));\n}\n\nlet ultima = dados[dados.length - 1] || {};\nlet dataGeracao = new Date().toLocaleString(\"pt-BR\");\n\nlet html = `\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>Relatório Agronômico Semanal - AgroSynk</title>\n\n<style>\nbody {\n    font-family: Arial, sans-serif;\n    padding: 30px;\n    color: #222;\n    background: #f7f7f7;\n}\n\n.container {\n    background: white;\n    padding: 30px;\n    border-radius: 16px;\n    max-width: 900px;\n    margin: auto;\n    box-shadow: 0 4px 14px rgba(0,0,0,0.12);\n}\n\nh1 {\n    color: #2E7D32;\n    margin-bottom: 5px;\n}\n\n.subtitulo {\n    color: #666;\n    margin-bottom: 25px;\n}\n\n.card {\n    border-left: 7px solid #2E7D32;\n    background: #f4f4f4;\n    padding: 18px;\n    border-radius: 12px;\n    margin: 18px 0;\n}\n\n.grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 12px;\n}\n\n.indicador {\n    background: white;\n    border-radius: 10px;\n    padding: 14px;\n    text-align: center;\n    border: 1px solid #ddd;\n}\n\n.valor {\n    font-size: 24px;\n    font-weight: bold;\n    color: #2E7D32;\n}\n\ntable {\n    width: 100%;\n    border-collapse: collapse;\n    margin-top: 15px;\n}\n\ntd, th {\n    border: 1px solid #ddd;\n    padding: 10px;\n    text-align: left;\n}\n\nth {\n    background: #2E7D32;\n    color: white;\n}\n\n.alerta {\n    background: #FFF8E1;\n    border-left: 6px solid #F9A825;\n    padding: 12px;\n    border-radius: 10px;\n}\n</style>\n</head>\n\n<body>\n\n<div class=\"container\">\n\n<h1>📄 Relatório Agronômico Semanal</h1>\n<p class=\"subtitulo\">Gerado em: ${dataGeracao}</p>\n\n<div class=\"card\">\n<h2>🌱 Resumo Geral</h2>\n<p><b>Cultura:</b> ${ultima.cultura || \"Não selecionada\"}</p>\n<p><b>Período:</b> últimos 7 dias</p>\n<p><b>Quantidade de leituras:</b> ${dados.length}</p>\n<p><b>Saúde média da lavoura:</b> ${media(\"saude\")}%</p>\n</div>\n\n<div class=\"card\">\n<h2>📊 Indicadores Médios</h2>\n\n<div class=\"grid\">\n<div class=\"indicador\"><div>Umidade do Solo</div><div class=\"valor\">${media(\"umidade\")}%</div></div>\n<div class=\"indicador\"><div>Temperatura do Solo</div><div class=\"valor\">${media(\"temperatura\")}°C</div></div>\n<div class=\"indicador\"><div>pH Médio</div><div class=\"valor\">${media(\"ph\")}</div></div>\n<div class=\"indicador\"><div>EC Média</div><div class=\"valor\">${media(\"ec\")}</div></div>\n<div class=\"indicador\"><div>Nitrogênio</div><div class=\"valor\">${media(\"nitrogenio\")}</div></div>\n<div class=\"indicador\"><div>Fósforo</div><div class=\"valor\">${media(\"fosforo\")}</div></div>\n<div class=\"indicador\"><div>Potássio</div><div class=\"valor\">${media(\"potassio\")}</div></div>\n<div class=\"indicador\"><div>Chuva</div><div class=\"valor\">${media(\"chuva\")} mm</div></div>\n<div class=\"indicador\"><div>Vento</div><div class=\"valor\">${media(\"vento\")} km/h</div></div>\n</div>\n</div>\n\n<div class=\"card\">\n<h2>🌦 Clima</h2>\n<table>\n<tr><th>Indicador</th><th>Média</th><th>Mínimo</th><th>Máximo</th></tr>\n<tr><td>Temperatura do Ar</td><td>${media(\"temperaturaAr\")}°C</td><td>${min(\"temperaturaAr\")}°C</td><td>${max(\"temperaturaAr\")}°C</td></tr>\n<tr><td>Umidade do Ar</td><td>${media(\"umidadeAr\")}%</td><td>${min(\"umidadeAr\")}%</td><td>${max(\"umidadeAr\")}%</td></tr>\n<tr><td>Radiação Solar</td><td>${media(\"radiacaoSolar\")} W/m²</td><td>${min(\"radiacaoSolar\")} W/m²</td><td>${max(\"radiacaoSolar\")} W/m²</td></tr>\n</table>\n</div>\n\n<div class=\"card\">\n<h2>🚨 Diagnóstico</h2>\n${\n    dados.length === 0\n    ? `<div class=\"alerta\">Nenhuma leitura encontrada em últimos 7 dias.</div>`\n    : `<p>O relatório foi gerado com base nos dados históricos registrados automaticamente pelo AgroSynk.</p>`\n}\n</div>\n\n</div>\n</body>\n</html>\n`;\n\nmsg.filename = \"/tmp/relatorio_semanal.html\";\nmsg.payload = html;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1900,
+        "wires": [
+            [
+                "0c2530022d1e4412"
+            ]
+        ]
+    },
+    {
+        "id": "0c2530022d1e4412",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "Salvar relatório semanal",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1280,
+        "y": 1900,
+        "wires": [
+            [
+                "100cd9ebcf844ee1"
+            ]
+        ]
+    },
+    {
+        "id": "100cd9ebcf844ee1",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Abrir download semanal",
+        "func": "msg.payload = {\n    acao: \"baixar\",\n    url: \"/baixar/semanal\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1900,
+        "wires": [
+            [
+                "66b5b01a33f74d55"
+            ]
+        ]
+    },
+    {
+        "id": "5fad220ed37f4ce1",
+        "type": "http in",
+        "z": "f7cf459f5c71ce75",
+        "name": "GET /baixar/semanal",
+        "url": "/baixar/semanal",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 2200,
+        "wires": [
+            [
+                "e6da5a291da14aff"
+            ]
+        ]
+    },
+    {
+        "id": "e6da5a291da14aff",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler arquivo semanal",
+        "filename": "\"/tmp/relatorio_semanal.html\"",
+        "filenameType": "jsonata",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 510,
+        "y": 2200,
+        "wires": [
+            [
+                "c5c7b43539be4ee0"
+            ]
+        ]
+    },
+    {
+        "id": "c5c7b43539be4ee0",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Headers semanal",
+        "func": "msg.headers = {\n    \"Content-Type\": \"text/html; charset=utf-8\",\n    \"Content-Disposition\": \"attachment; filename=relatorio_semanal.html\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2200,
+        "wires": [
+            [
+                "defde83b5a2f492e"
+            ]
+        ]
+    },
+    {
+        "id": "defde83b5a2f492e",
+        "type": "http response",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 980,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "e99b5f97869e4eb4",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Definir histórico mensal",
+        "func": "msg.filename = \"/tmp/historico_sensores.json\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1960,
+        "wires": [
+            [
+                "cfc900aeeffd45fa"
+            ]
+        ]
+    },
+    {
+        "id": "cfc900aeeffd45fa",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler histórico mensal",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 760,
+        "y": 1960,
+        "wires": [
+            [
+                "435ebe74a57d4ce0"
+            ]
+        ]
+    },
+    {
+        "id": "435ebe74a57d4ce0",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Gerar relatório mensal real",
+        "func": "let historico = [];\n\ntry {\n    historico = JSON.parse(msg.payload || \"[]\");\n} catch (e) {\n    historico = [];\n}\n\nlet agora = Date.now();\nlet limite = agora - (30 * 24 * 60 * 60 * 1000);\n\nlet dados = historico.filter(item => {\n    return new Date(item.data).getTime() >= limite;\n});\n\nfunction media(campo) {\n    if (dados.length === 0) return 0;\n    let soma = dados.reduce((acc, item) => acc + Number(item[campo] || 0), 0);\n    return (soma / dados.length).toFixed(1);\n}\n\nfunction max(campo) {\n    if (dados.length === 0) return 0;\n    return Math.max(...dados.map(item => Number(item[campo] || 0)));\n}\n\nfunction min(campo) {\n    if (dados.length === 0) return 0;\n    return Math.min(...dados.map(item => Number(item[campo] || 0)));\n}\n\nlet ultima = dados[dados.length - 1] || {};\nlet dataGeracao = new Date().toLocaleString(\"pt-BR\");\n\nlet html = `\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>Relatório Agronômico Mensal - AgroSynk</title>\n\n<style>\nbody {\n    font-family: Arial, sans-serif;\n    padding: 30px;\n    color: #222;\n    background: #f7f7f7;\n}\n\n.container {\n    background: white;\n    padding: 30px;\n    border-radius: 16px;\n    max-width: 900px;\n    margin: auto;\n    box-shadow: 0 4px 14px rgba(0,0,0,0.12);\n}\n\nh1 {\n    color: #2E7D32;\n    margin-bottom: 5px;\n}\n\n.subtitulo {\n    color: #666;\n    margin-bottom: 25px;\n}\n\n.card {\n    border-left: 7px solid #2E7D32;\n    background: #f4f4f4;\n    padding: 18px;\n    border-radius: 12px;\n    margin: 18px 0;\n}\n\n.grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 12px;\n}\n\n.indicador {\n    background: white;\n    border-radius: 10px;\n    padding: 14px;\n    text-align: center;\n    border: 1px solid #ddd;\n}\n\n.valor {\n    font-size: 24px;\n    font-weight: bold;\n    color: #2E7D32;\n}\n\ntable {\n    width: 100%;\n    border-collapse: collapse;\n    margin-top: 15px;\n}\n\ntd, th {\n    border: 1px solid #ddd;\n    padding: 10px;\n    text-align: left;\n}\n\nth {\n    background: #2E7D32;\n    color: white;\n}\n\n.alerta {\n    background: #FFF8E1;\n    border-left: 6px solid #F9A825;\n    padding: 12px;\n    border-radius: 10px;\n}\n</style>\n</head>\n\n<body>\n\n<div class=\"container\">\n\n<h1>📄 Relatório Agronômico Mensal</h1>\n<p class=\"subtitulo\">Gerado em: ${dataGeracao}</p>\n\n<div class=\"card\">\n<h2>🌱 Resumo Geral</h2>\n<p><b>Cultura:</b> ${ultima.cultura || \"Não selecionada\"}</p>\n<p><b>Período:</b> últimos 30 dias</p>\n<p><b>Quantidade de leituras:</b> ${dados.length}</p>\n<p><b>Saúde média da lavoura:</b> ${media(\"saude\")}%</p>\n</div>\n\n<div class=\"card\">\n<h2>📊 Indicadores Médios</h2>\n\n<div class=\"grid\">\n<div class=\"indicador\"><div>Umidade do Solo</div><div class=\"valor\">${media(\"umidade\")}%</div></div>\n<div class=\"indicador\"><div>Temperatura do Solo</div><div class=\"valor\">${media(\"temperatura\")}°C</div></div>\n<div class=\"indicador\"><div>pH Médio</div><div class=\"valor\">${media(\"ph\")}</div></div>\n<div class=\"indicador\"><div>EC Média</div><div class=\"valor\">${media(\"ec\")}</div></div>\n<div class=\"indicador\"><div>Nitrogênio</div><div class=\"valor\">${media(\"nitrogenio\")}</div></div>\n<div class=\"indicador\"><div>Fósforo</div><div class=\"valor\">${media(\"fosforo\")}</div></div>\n<div class=\"indicador\"><div>Potássio</div><div class=\"valor\">${media(\"potassio\")}</div></div>\n<div class=\"indicador\"><div>Chuva</div><div class=\"valor\">${media(\"chuva\")} mm</div></div>\n<div class=\"indicador\"><div>Vento</div><div class=\"valor\">${media(\"vento\")} km/h</div></div>\n</div>\n</div>\n\n<div class=\"card\">\n<h2>🌦 Clima</h2>\n<table>\n<tr><th>Indicador</th><th>Média</th><th>Mínimo</th><th>Máximo</th></tr>\n<tr><td>Temperatura do Ar</td><td>${media(\"temperaturaAr\")}°C</td><td>${min(\"temperaturaAr\")}°C</td><td>${max(\"temperaturaAr\")}°C</td></tr>\n<tr><td>Umidade do Ar</td><td>${media(\"umidadeAr\")}%</td><td>${min(\"umidadeAr\")}%</td><td>${max(\"umidadeAr\")}%</td></tr>\n<tr><td>Radiação Solar</td><td>${media(\"radiacaoSolar\")} W/m²</td><td>${min(\"radiacaoSolar\")} W/m²</td><td>${max(\"radiacaoSolar\")} W/m²</td></tr>\n</table>\n</div>\n\n<div class=\"card\">\n<h2>🚨 Diagnóstico</h2>\n${\n    dados.length === 0\n    ? `<div class=\"alerta\">Nenhuma leitura encontrada em últimos 30 dias.</div>`\n    : `<p>O relatório foi gerado com base nos dados históricos registrados automaticamente pelo AgroSynk.</p>`\n}\n</div>\n\n</div>\n</body>\n</html>\n`;\n\nmsg.filename = \"/tmp/relatorio_mensal.html\";\nmsg.payload = html;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1960,
+        "wires": [
+            [
+                "3a6d001a04234d60"
+            ]
+        ]
+    },
+    {
+        "id": "3a6d001a04234d60",
+        "type": "file",
+        "z": "f7cf459f5c71ce75",
+        "name": "Salvar relatório mensal",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1280,
+        "y": 1960,
+        "wires": [
+            [
+                "f52dbce851734464"
+            ]
+        ]
+    },
+    {
+        "id": "f52dbce851734464",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Abrir download mensal",
+        "func": "msg.payload = {\n    acao: \"baixar\",\n    url: \"/baixar/mensal\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1520,
+        "y": 1960,
+        "wires": [
+            [
+                "66b5b01a33f74d55"
+            ]
+        ]
+    },
+    {
+        "id": "f111e4debade43bf",
+        "type": "http in",
+        "z": "f7cf459f5c71ce75",
+        "name": "GET /baixar/mensal",
+        "url": "/baixar/mensal",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 2260,
+        "wires": [
+            [
+                "395909456ae6469b"
+            ]
+        ]
+    },
+    {
+        "id": "395909456ae6469b",
+        "type": "file in",
+        "z": "f7cf459f5c71ce75",
+        "name": "Ler arquivo mensal",
+        "filename": "\"/tmp/relatorio_mensal.html\"",
+        "filenameType": "jsonata",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 510,
+        "y": 2260,
+        "wires": [
+            [
+                "4148f0a6e9584777"
+            ]
+        ]
+    },
+    {
+        "id": "4148f0a6e9584777",
+        "type": "function",
+        "z": "f7cf459f5c71ce75",
+        "name": "Headers mensal",
+        "func": "msg.headers = {\n    \"Content-Type\": \"text/html; charset=utf-8\",\n    \"Content-Disposition\": \"attachment; filename=relatorio_mensal.html\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2260,
+        "wires": [
+            [
+                "53346057299c44fb"
+            ]
+        ]
+    },
+    {
+        "id": "53346057299c44fb",
+        "type": "http response",
+        "z": "f7cf459f5c71ce75",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 980,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "66b5b01a33f74d55",
+        "type": "ui_template",
+        "z": "f7cf459f5c71ce75",
+        "group": "e4f41adf3cf7828e",
+        "name": "Download automático relatórios",
+        "order": 99,
+        "width": "1",
+        "height": "1",
+        "format": "<div style=\"display:none;\"></div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg', function(msg) {\n        if (!msg || !msg.payload || !msg.payload.url) return;\n        if (msg.payload.acao !== \"baixar\") return;\n\n        window.location.href = msg.payload.url + \"?t=\" + new Date().getTime();\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1430,
+        "y": 2050,
+        "wires": [
+            []
+        ]
     }
 ]
